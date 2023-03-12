@@ -11,4 +11,9 @@ public class TestItem extends WaveItem {
 
         addTranslation("en_us", "Test Item");
     }
+
+    @Override
+    public int getMaxStackSize() {
+        return 16;
+    }
 }
