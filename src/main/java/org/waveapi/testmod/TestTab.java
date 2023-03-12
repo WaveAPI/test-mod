@@ -6,7 +6,7 @@ public class TestTab extends WaveTab {
 
     private static TestTab instance;
     public TestTab() {
-        super("tab", "logo.png", TestMod.getInstance());
+        super("tab", "test/logo.png", TestMod.getInstance());
         instance = this;
         addTranslation("en_us", "Test Tab");
     }
