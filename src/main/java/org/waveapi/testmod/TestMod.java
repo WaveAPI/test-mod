@@ -6,7 +6,7 @@ import org.waveapi.api.WaveMod;
 public class TestMod extends WaveMod {
 
     private static TestMod instance;
-    private Logger log;
+    public static Logger log;
 
     public TestMod() {
         super("test", "1.0");
