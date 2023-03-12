@@ -2,6 +2,7 @@ package org.waveapi.testmod;
 
 import org.waveapi.api.Logger;
 import org.waveapi.api.content.items.WaveItem;
+import org.waveapi.api.content.items.WaveShapedRecipe;
 import org.waveapi.api.content.items.models.ItemModel;
 import org.waveapi.api.content.items.models.SimpleItemModel;
 import org.waveapi.api.math.Vector3;
@@ -18,6 +19,15 @@ public class TestItem extends WaveItem {
         addTranslation("en_us", "Test Item");
 
         setMaxStackSize(16);
+
+        new WaveShapedRecipe(this,
+                    new String[] {
+                            "###",
+                            "#@#",
+                            "###"
+                    }, TestMod.getInstance())
+                .addIngredient('#', "minecraft:stone")
+                .addIngredient('@' , "minecraft:emerald");
     }
 
     @Override
