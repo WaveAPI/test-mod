@@ -4,6 +4,8 @@ import org.waveapi.api.Logger;
 import org.waveapi.api.content.items.WaveItem;
 import org.waveapi.api.content.items.models.ItemModel;
 import org.waveapi.api.content.items.models.SimpleItemModel;
+import org.waveapi.api.math.Vector3;
+import org.waveapi.api.world.entity.living.EntityPlayer;
 import org.waveapi.api.world.inventory.ItemStack;
 import org.waveapi.api.world.inventory.ItemUseResult;
 import org.waveapi.api.world.inventory.UseHand;
@@ -15,13 +17,13 @@ public class TestItem extends WaveItem {
 
         addTranslation("en_us", "Test Item");
 
-        setMaxStackSize(16);
+        setMaxStackSize(1024);
     }
 
     @Override
-    public ItemUseResult onUse(ItemStack item, UseHand hand) {
+    public ItemUseResult onUse(ItemStack item, UseHand hand, EntityPlayer player) {
         item.setAmount(item.getAmount() - 1);
-        TestMod.log.log("test");
+        player.setVelocity(new Vector3(0, 1.5, 0));
         return ItemUseResult.SUCCESS;
     }
 }
