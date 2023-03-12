@@ -35,7 +35,7 @@ public class TestItem extends WaveItem {
     @Override
     public ItemUseResult onUse(ItemStack item, UseHand hand, EntityPlayer player) {
         item.setAmount(item.getAmount() - 1);
-        player.setVelocity(new Vector3(0, 1.5, 0));
+        player.setVelocity(new Vector3(0, 0.5, 3.5).rotateY(-player.getHeadYaw() * (float)Math.PI / 180f));
         return ItemUseResult.SUCCESS;
     }
 }
