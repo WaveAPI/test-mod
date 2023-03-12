@@ -24,6 +24,8 @@ public class TestMod extends WaveMod {
 
         log.log("Init!");
 
+        new TestTab();
+
         new TestItem();
     }
 }

@@ -14,11 +14,13 @@ import org.waveapi.api.world.inventory.UseHand;
 public class TestItem extends WaveItem {
     public TestItem() {
         super("test_item", TestMod.getInstance());
+
         setModel(new SimpleItemModel("test_item.png"));
+        setTab(TestTab.getInstance());
+        setMaxStackSize(16);
 
         addTranslation("en_us", "Test Item");
 
-        setMaxStackSize(16);
 
         new WaveShapedRecipe(this,
                     new String[] {
