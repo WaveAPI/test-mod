@@ -14,6 +14,8 @@ public class TestItem extends WaveItem {
         setModel(new SimpleItemModel("test_item.png"));
 
         addTranslation("en_us", "Test Item");
+
+        setMaxStackSize(16);
     }
 
     @Override
@@ -21,10 +23,5 @@ public class TestItem extends WaveItem {
         item.setAmount(item.getAmount() - 1);
         TestMod.log.log("test");
         return ItemUseResult.SUCCESS;
-    }
-
-    @Override
-    public int getMaxStackSize() {
-        return 16;
     }
 }
