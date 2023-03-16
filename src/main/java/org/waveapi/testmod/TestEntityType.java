@@ -6,6 +6,11 @@ import org.waveapi.api.content.entities.renderer.WaveItemBasedEntityRenderer;
 
 public class TestEntityType extends WaveEntityType<TestEntity> {
     public TestEntityType() {
-        super("test_entity", TestEntity.class, new WaveItemBasedEntityRenderer(), TestMod.getInstance());
+        super("test_entity", TestEntity.class, TestMod.getInstance());
+    }
+
+    @Override
+    public WaveEntityRenderer getEntityRenderer() {
+        return new WaveItemBasedEntityRenderer();
     }
 }

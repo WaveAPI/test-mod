@@ -37,12 +37,14 @@ public class TestItem extends WaveItem {
     @Override
     public ItemUseResult onUse(ItemStack item, UseHand hand, EntityPlayer player, World world) {
         BlockPos lookingAt = player.getBlockLookingAt(4.0);
-        if (lookingAt != null) {
+        if (lookingAt != null && !world.isClientSide()) {
             item.setAmount(item.getAmount() - 1);
             Vector3 loc = lookingAt.toVector3().add(0.5, 1.5, 0.5);
 
             EntityBase entityBase = EntityCreation.create(TestMod.entityType, world);
             entityBase.setPosition(loc);
+
+            player.sendActionBar("[Successfully placed a Test Item!]");
 
             world.addEntity(entityBase);
 
