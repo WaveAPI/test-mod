@@ -2,9 +2,12 @@ package org.waveapi.testmod;
 
 import org.waveapi.api.Logger;
 import org.waveapi.api.WaveMod;
+import org.waveapi.api.content.entities.WaveEntityType;
+import org.waveapi.api.world.entity.EntityBase;
 
 public class TestMod extends WaveMod {
 
+    public static WaveEntityType<? extends EntityBase> entityType;
     private static TestMod instance;
     public static Logger log;
 
@@ -18,6 +21,8 @@ public class TestMod extends WaveMod {
         return instance;
     }
 
+    public static TestItem item;
+
     @Override
     public void init() {
         log = new Logger(this);
@@ -26,8 +31,8 @@ public class TestMod extends WaveMod {
 
         new TestTab();
 
-        new TestItem();
+        item = new TestItem();
 
-        new TestEntityType();
+        entityType = new TestEntityType();
     }
 }
