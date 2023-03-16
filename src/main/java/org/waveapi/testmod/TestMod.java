@@ -27,5 +27,7 @@ public class TestMod extends WaveMod {
         new TestTab();
 
         new TestItem();
+
+        new TestEntityType();
     }
 }
