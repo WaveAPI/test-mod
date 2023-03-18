@@ -3,7 +3,12 @@ package org.waveapi.testmod;
 import org.waveapi.api.Logger;
 import org.waveapi.api.WaveMod;
 import org.waveapi.api.content.entities.WaveEntityType;
+import org.waveapi.api.events.EventHandler;
+import org.waveapi.api.events.Events;
+import org.waveapi.api.events.event.message.ClientChatMessageEvent;
+import org.waveapi.api.misc.ClientOnly;
 import org.waveapi.api.world.entity.EntityBase;
+import org.waveapi.api.world.entity.living.EntityPlayer;
 
 public class TestMod extends WaveMod {
 
@@ -13,7 +18,6 @@ public class TestMod extends WaveMod {
 
     public TestMod() {
         super("test", "1.0");
-
         instance = this;
     }
 
@@ -34,5 +38,19 @@ public class TestMod extends WaveMod {
         item = new TestItem();
 
         entityType = new TestEntityType();
+    }
+
+    @Override
+    public void registerClientEvents(Events register) {
+        register.register(this);
+    }
+
+    @EventHandler(priority = 1)
+    public void onMessage(ClientChatMessageEvent e) {
+        if (e.getText().getText().endsWith("Up, you go!")) {
+            log.log("You have been boosted");
+            EntityPlayer player = ClientOnly.getPlayer();
+            player.setVelocity(player.getVelocity().addY(1.0));
+        }
     }
 }
