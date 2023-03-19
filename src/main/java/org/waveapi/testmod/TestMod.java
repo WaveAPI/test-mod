@@ -6,6 +6,7 @@ import org.waveapi.api.content.entities.WaveEntityType;
 import org.waveapi.api.events.EventHandler;
 import org.waveapi.api.events.Events;
 import org.waveapi.api.events.event.message.ClientChatMessageEvent;
+import org.waveapi.api.math.BlockPos;
 import org.waveapi.api.misc.ClientOnly;
 import org.waveapi.api.world.entity.EntityBase;
 import org.waveapi.api.world.entity.living.EntityPlayer;
@@ -35,6 +36,7 @@ public class TestMod extends WaveMod {
 
         new TestTab();
 
+        new TestBlock();
         item = new TestItem();
 
         entityType = new TestEntityType();
@@ -51,6 +53,8 @@ public class TestMod extends WaveMod {
             log.log("You have been boosted");
             EntityPlayer player = ClientOnly.getPlayer();
             player.setVelocity(player.getVelocity().addY(1.0));
+
+            BlockPos pos = player.getBlockLookingAt(10000);
         }
     }
 }
