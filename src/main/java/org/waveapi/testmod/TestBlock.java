@@ -12,6 +12,7 @@ public class TestBlock extends WaveBlock implements TileEntityBlock {
         super("test_block", TestMod.getInstance(), BlockMaterial.SOIL);
         setTab(TestTab.getInstance());
         setModels(new SixSidedBlockModel((String) null));
+        setHardness(0.5f);
 
         addTranslation("en_us", "The HMM");
     }
