@@ -3,6 +3,7 @@ package org.waveapi.testmod;
 import org.waveapi.api.Logger;
 import org.waveapi.api.WaveMod;
 import org.waveapi.api.content.entities.WaveEntityType;
+import org.waveapi.api.content.items.WaveItem;
 import org.waveapi.api.events.EventHandler;
 import org.waveapi.api.events.Events;
 import org.waveapi.api.events.event.message.ClientChatMessageEvent;
@@ -14,6 +15,7 @@ import org.waveapi.api.world.entity.living.EntityPlayer;
 public class TestMod extends WaveMod {
 
     public static WaveEntityType<? extends EntityBase> entityType;
+    public static WaveItem another_item;
     private static TestMod instance;
     public static Logger log;
 
@@ -38,6 +40,7 @@ public class TestMod extends WaveMod {
 
         new TestBlock();
         item = new TestItem();
+        another_item = new AnotherTestItem();
 
         entityType = new TestEntityType();
     }

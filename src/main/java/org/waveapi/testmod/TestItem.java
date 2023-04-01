@@ -6,7 +6,6 @@ import org.waveapi.api.content.items.WaveShapedRecipe;
 import org.waveapi.api.content.items.models.SimpleItemModel;
 import org.waveapi.api.math.BlockPos;
 import org.waveapi.api.math.Vector3;
-import org.waveapi.api.world.entity.DamageSource;
 import org.waveapi.api.world.entity.EntityBase;
 import org.waveapi.api.world.entity.living.EntityPlayer;
 import org.waveapi.api.world.inventory.ItemStack;
@@ -45,6 +44,8 @@ public class TestItem extends WaveItem {
             entityBase.setPosition(loc);
 
             player.sendActionBar("[Successfully placed a Test Item!]");
+
+            player.giveItem(TestMod.another_item.getDefaultStack());
 
             world.addEntity(entityBase);
 
