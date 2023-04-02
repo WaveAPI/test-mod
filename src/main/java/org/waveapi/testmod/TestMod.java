@@ -45,6 +45,8 @@ public class TestMod extends WaveMod {
 
         new TestBlock();
         new TestBlock2();
+
+        new WeirdSword();
     }
 
     @Override

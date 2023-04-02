@@ -2,8 +2,8 @@ package org.waveapi.testmod;
 
 import org.waveapi.api.content.entities.EntityCreation;
 import org.waveapi.api.content.items.WaveItem;
-import org.waveapi.api.content.items.WaveShapedRecipe;
 import org.waveapi.api.content.items.models.SimpleItemModel;
+import org.waveapi.api.content.items.recipes.WaveShapedRecipe;
 import org.waveapi.api.math.BlockPos;
 import org.waveapi.api.math.Vector3;
 import org.waveapi.api.world.entity.EntityBase;
