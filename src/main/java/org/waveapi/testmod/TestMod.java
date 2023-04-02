@@ -38,11 +38,13 @@ public class TestMod extends WaveMod {
 
         new TestTab();
 
-        new TestBlock();
         item = new TestItem();
         another_item = new AnotherTestItem();
 
         entityType = new TestEntityType();
+
+        new TestBlock();
+
     }
 
     @Override
