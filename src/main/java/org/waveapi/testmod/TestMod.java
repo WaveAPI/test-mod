@@ -17,8 +17,7 @@ import org.waveapi.testmod.itemsblocks.AnotherTestItem;
 import org.waveapi.testmod.itemsblocks.TestBlock;
 import org.waveapi.testmod.itemsblocks.TestBlock2;
 import org.waveapi.testmod.itemsblocks.TestItem;
-import org.waveapi.testmod.tools.WeirdPickaxe;
-import org.waveapi.testmod.tools.WeirdSword;
+import org.waveapi.testmod.tools.*;
 
 public class TestMod extends WaveMod {
 
@@ -65,6 +64,9 @@ public class TestMod extends WaveMod {
 
         new WeirdSword();
         new WeirdPickaxe();
+        new WeirdAxe();
+        new WeirdHoe();
+        new WeirdShovel();
     }
 
     @Override
