@@ -4,6 +4,8 @@ import org.waveapi.api.Logger;
 import org.waveapi.api.WaveMod;
 import org.waveapi.api.content.entities.WaveEntityType;
 import org.waveapi.api.content.items.WaveItem;
+import org.waveapi.api.content.items.recipes.ingredients.SimpleItemIngredient;
+import org.waveapi.api.content.items.tools.WaveToolMaterial;
 import org.waveapi.api.events.EventHandler;
 import org.waveapi.api.events.Events;
 import org.waveapi.api.events.event.message.ClientChatMessageEvent;
@@ -11,6 +13,12 @@ import org.waveapi.api.math.BlockPos;
 import org.waveapi.api.misc.ClientOnly;
 import org.waveapi.api.world.entity.EntityBase;
 import org.waveapi.api.world.entity.living.EntityPlayer;
+import org.waveapi.testmod.itemsblocks.AnotherTestItem;
+import org.waveapi.testmod.itemsblocks.TestBlock;
+import org.waveapi.testmod.itemsblocks.TestBlock2;
+import org.waveapi.testmod.itemsblocks.TestItem;
+import org.waveapi.testmod.tools.WeirdPickaxe;
+import org.waveapi.testmod.tools.WeirdSword;
 
 public class TestMod extends WaveMod {
 
@@ -30,6 +38,8 @@ public class TestMod extends WaveMod {
 
     public static TestItem item;
 
+    public static WaveToolMaterial weird;
+
     @Override
     public void init() {
         log = new Logger(this);
@@ -43,10 +53,18 @@ public class TestMod extends WaveMod {
 
         entityType = new TestEntityType();
 
+        weird = new WaveToolMaterial()
+                .setAttackDamage(1)
+                .setBaseDurability(500)
+                .setMiningLevel(1)
+                .setMiningSpeedMultiplier(1000f)
+                .setRepairIngredient(new SimpleItemIngredient(TestMod.another_item));
+
         new TestBlock();
         new TestBlock2();
 
         new WeirdSword();
+        new WeirdPickaxe();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package org.waveapi.testmod;
+package org.waveapi.testmod.itemsblocks;
 
 import org.waveapi.api.content.entities.EntityCreation;
 import org.waveapi.api.content.items.WaveItem;
@@ -12,6 +12,8 @@ import org.waveapi.api.world.inventory.ItemStack;
 import org.waveapi.api.world.inventory.ItemUseResult;
 import org.waveapi.api.world.inventory.UseHand;
 import org.waveapi.api.world.world.World;
+import org.waveapi.testmod.TestMod;
+import org.waveapi.testmod.TestTab;
 
 public class TestItem extends WaveItem {
     public TestItem() {

@@ -1,4 +1,4 @@
-package org.waveapi.testmod;
+package org.waveapi.testmod.itemsblocks;
 
 
 import org.waveapi.api.content.items.block.BlockMaterial;
@@ -8,6 +8,8 @@ import org.waveapi.api.content.items.block.blockentities.WaveTileEntity;
 import org.waveapi.api.content.items.block.model.SixSidedBlockModel;
 import org.waveapi.api.content.items.drop.Drop;
 import org.waveapi.api.content.items.drop.DropHelper;
+import org.waveapi.testmod.TestMod;
+import org.waveapi.testmod.TestTab;
 
 public class TestBlock extends WaveBlock implements TileEntityBlock {
     public TestBlock() {

@@ -1,9 +1,10 @@
-package org.waveapi.testmod;
+package org.waveapi.testmod.itemsblocks;
 
 import org.waveapi.api.content.items.block.MinecraftBlocks;
 import org.waveapi.api.content.items.block.blockentities.DeltaTicking;
 import org.waveapi.api.content.items.block.blockentities.TileEntityCreation;
 import org.waveapi.api.content.items.block.blockentities.WaveTileEntity;
+import org.waveapi.testmod.TestMod;
 
 public class TestTileEntity extends WaveTileEntity implements DeltaTicking {
     public TestTileEntity(TileEntityCreation creation) {

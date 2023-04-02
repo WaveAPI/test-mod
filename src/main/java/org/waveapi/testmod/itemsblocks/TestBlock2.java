@@ -1,9 +1,11 @@
-package org.waveapi.testmod;
+package org.waveapi.testmod.itemsblocks;
 
 
 import org.waveapi.api.content.items.block.BlockMaterial;
 import org.waveapi.api.content.items.block.WaveBlock;
 import org.waveapi.api.content.items.block.model.SixSidedBlockModel;
+import org.waveapi.testmod.TestMod;
+import org.waveapi.testmod.TestTab;
 
 public class TestBlock2 extends WaveBlock {
     public TestBlock2() {
