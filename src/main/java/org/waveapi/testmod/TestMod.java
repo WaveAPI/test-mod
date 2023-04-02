@@ -44,7 +44,7 @@ public class TestMod extends WaveMod {
         entityType = new TestEntityType();
 
         new TestBlock();
-
+        new TestBlock2();
     }
 
     @Override

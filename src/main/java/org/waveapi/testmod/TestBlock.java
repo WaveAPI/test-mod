@@ -19,6 +19,9 @@ public class TestBlock extends WaveBlock implements TileEntityBlock {
                 DropHelper.ore(this, TestMod.another_item, 5, 10)
         });
 
+        makeHoeEffective();
+        setMiningLevelRequired(2);
+
         addTranslation("en_us", "The HMM");
     }
 
