@@ -8,6 +8,12 @@ import org.waveapi.api.content.items.block.blockentities.WaveTileEntity;
 import org.waveapi.api.content.items.block.model.SixSidedBlockModel;
 import org.waveapi.api.content.items.drop.Drop;
 import org.waveapi.api.content.items.drop.DropHelper;
+import org.waveapi.api.math.BlockPos;
+import org.waveapi.api.world.entity.living.EntityPlayer;
+import org.waveapi.api.world.inventory.ItemUseResult;
+import org.waveapi.api.world.inventory.UseHand;
+import org.waveapi.api.world.world.BlockState;
+import org.waveapi.api.world.world.World;
 import org.waveapi.testmod.TestMod;
 import org.waveapi.testmod.TestTab;
 
@@ -27,6 +33,18 @@ public class TestBlock extends WaveBlock implements TileEntityBlock {
         addTranslation("en_us", "The HMM");
     }
 
+    @Override
+    public ItemUseResult onUse(BlockState blockState, BlockPos pos, World world, EntityPlayer entityPlayer, UseHand useHand) {
+        TestTileEntity e = world.getTileEntity(pos, TestTileEntity.class);
+        e.markNeedsSaving();
+        if (e.mode == 0) {
+            e.mode = 1;
+        } else {
+            e.mode = 0;
+        }
+
+        return ItemUseResult.CONSUME;
+    }
 
     @Override
     public Class<? extends WaveTileEntity> getTileEntity() {
