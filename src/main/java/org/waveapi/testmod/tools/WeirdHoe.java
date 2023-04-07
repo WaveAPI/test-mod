@@ -7,9 +7,9 @@ import org.waveapi.testmod.TestTab;
 
 public class WeirdHoe extends WaveHoeItem {
     public WeirdHoe() {
-        super("weird_hoe", TestMod.getInstance(), TestMod.weird);
+        super("weird_hoe", TestMod.weird, TestMod.getInstance());
 
-        setModel(new SimpleToolModel("test/weird_hoe.png"));
+        setModel(new SimpleToolModel("test/tools/weird_hoe.png"));
         setTab(TestTab.getInstance());
 
         addTranslation("en_us", "Weird Hoe");

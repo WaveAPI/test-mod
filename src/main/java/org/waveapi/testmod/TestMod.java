@@ -4,15 +4,21 @@ import org.waveapi.api.Logger;
 import org.waveapi.api.WaveMod;
 import org.waveapi.api.content.entities.WaveEntityType;
 import org.waveapi.api.content.items.WaveItem;
+import org.waveapi.api.content.items.armour.WaveArmourMaterial;
 import org.waveapi.api.content.items.recipes.ingredients.SimpleItemIngredient;
 import org.waveapi.api.content.items.tools.WaveToolMaterial;
 import org.waveapi.api.events.EventHandler;
 import org.waveapi.api.events.Events;
 import org.waveapi.api.events.event.message.ClientChatMessageEvent;
+import org.waveapi.api.file.texture.Texture;
 import org.waveapi.api.math.BlockPos;
 import org.waveapi.api.misc.ClientOnly;
 import org.waveapi.api.world.entity.EntityBase;
 import org.waveapi.api.world.entity.living.EntityPlayer;
+import org.waveapi.testmod.armour.WeirdBoots;
+import org.waveapi.testmod.armour.WeirdChestplate;
+import org.waveapi.testmod.armour.WeirdHelmet;
+import org.waveapi.testmod.armour.WeirdLeggings;
 import org.waveapi.testmod.itemsblocks.AnotherTestItem;
 import org.waveapi.testmod.itemsblocks.TestBlock;
 import org.waveapi.testmod.itemsblocks.TestBlock2;
@@ -25,6 +31,7 @@ public class TestMod extends WaveMod {
     public static WaveItem another_item;
     private static TestMod instance;
     public static Logger log;
+    public static WaveArmourMaterial weird_armour;
 
     public TestMod() {
         super("test", "1.0");
@@ -58,6 +65,21 @@ public class TestMod extends WaveMod {
                 .setMiningLevel(1)
                 .setMiningSpeedMultiplier(1000f)
                 .setRepairIngredient(new SimpleItemIngredient(TestMod.another_item));
+
+        weird_armour = new WaveArmourMaterial("weird")
+                .setBaseDurability(250)
+                .setDurability(new int[] {4, 7, 5, 3})
+                .setProtection(new int[] {3, 5, 4, 2})
+                .setToughness(0.5f)
+                .setRepairIngredient(new SimpleItemIngredient(TestMod.another_item))
+                .setHelmetChestplateBootsTexture(new Texture("test/armour/armour_main.png"))
+                .setLeggingsTexture(new Texture("test/armour/armour_legs.png"));
+
+        new WeirdHelmet();
+        new WeirdChestplate();
+        new WeirdLeggings();
+        new WeirdBoots();
+
 
         new TestBlock();
         new TestBlock2();

@@ -13,9 +13,9 @@ import org.waveapi.testmod.TestTab;
 
 public class WeirdPickaxe extends WavePickaxeItem {
     public WeirdPickaxe() {
-        super("weird_pickaxe", TestMod.getInstance(), TestMod.weird);
+        super("weird_pickaxe", TestMod.weird, TestMod.getInstance());
 
-        setModel(new SimpleToolModel("test/weird_pickaxe.png"));
+        setModel(new SimpleToolModel("test/tools/weird_pickaxe.png"));
         setTab(TestTab.getInstance());
 
         addTranslation("en_us", "Weird Pickaxe");

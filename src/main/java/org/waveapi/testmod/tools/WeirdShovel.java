@@ -7,9 +7,9 @@ import org.waveapi.testmod.TestTab;
 
 public class WeirdShovel extends WaveShovelItem {
     public WeirdShovel() {
-        super("weird_shovel", TestMod.getInstance(), TestMod.weird);
+        super("weird_shovel", TestMod.weird, TestMod.getInstance());
 
-        setModel(new SimpleToolModel("test/weird_shovel.png"));
+        setModel(new SimpleToolModel("test/tools/weird_shovel.png"));
         setTab(TestTab.getInstance());
 
         addTranslation("en_us", "Weird Shovel");

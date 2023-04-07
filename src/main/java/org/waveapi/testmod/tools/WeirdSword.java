@@ -7,11 +7,11 @@ import org.waveapi.testmod.TestTab;
 
 public class WeirdSword extends WaveSwordItem {
     public WeirdSword() {
-        super("weird_sword", TestMod.getInstance(), TestMod.weird);
+        super("weird_sword", TestMod.weird, TestMod.getInstance());
         setAttackDamage(14);
         setAttackSpeed(-3.2f);
 
-        setModel(new SimpleToolModel("test/weird_sword.png"));
+        setModel(new SimpleToolModel("test/tools/weird_sword.png"));
         setTab(TestTab.getInstance());
 
         addTranslation("en_us", "Weird Sword");
